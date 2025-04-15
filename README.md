@@ -1,7 +1,7 @@
 # MiniCrypto 🪙📈
 
 <p align="center">
-  <img src="minibtc.jpg" alt="Bitcoin logo" width="600"/>
+  <img src="minibtc.png" alt="Bitcoin logo" width="600"/>
 </p>
 
 ## Description
