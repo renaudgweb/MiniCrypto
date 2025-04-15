@@ -54,8 +54,8 @@ try {
             }
 
             // Affichage du prix du Bitcoin
-            //$vdt .= MiniPavi\MiniPaviCli::writeCentered(12, "\nPrix actuel du Bitcoin mis à jour le :\n" . strftime('%e %B %Y à %Hh%M') . ":\n", VDT_TXTYELLOW); // Avant PHP8.1
-            $vdt .= MiniPavi\MiniPaviCli::writeCentered(12, "\nPrix actuel du Bitcoin mis à jour le :\n" . $formatter->format(new DateTime()) . " :\n", VDT_TXTYELLOW);
+            //$vdt .= MiniPavi\MiniPaviCli::writeCentered(12, "\nPrix du Bitcoin mis à jour le :\n" . strftime('%e %B %Y à %Hh%M') . ":\n", VDT_TXTYELLOW); // Avant PHP8.1
+            $vdt .= MiniPavi\MiniPaviCli::writeCentered(12, "\nPrix du Bitcoin mis à jour le :\n" . $formatter->format(new DateTime()) . " :\n", VDT_TXTYELLOW);
             $vdt .= MiniPavi\MiniPaviCli::writeCentered(12, $bitcoinPrice . "\n", VDT_TXTYELLOW);
             $vdt .= "\nAppuyez sur SUITE pour plus d'informations.";
 

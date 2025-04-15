@@ -40,11 +40,17 @@ Binancecoin (BNB), Solana (SOL), Tron (TRX), Dogecoin (DOGE), Cardano (ADA), en 
 
 - **RenaudG** 👨‍💻
 
-## Version
+## Version 🔄
 
 - **0.1** (Avril 2025) 📅
 
-## Remarques
+## Ressources 📚
+
+🔗 [minipaviCli](https://github.com/ludosevilla/minipaviCli)
+
+🔗 [minipavi](http://www.minipavi.fr)
+
+## Remarques 📝
 
 - Ce script est conçu pour un usage spécifique avec un Minitel et la passerelle MiniPavi.
 - Les erreurs sont masquées pour éviter d'afficher des informations sensibles à l'utilisateur final.
