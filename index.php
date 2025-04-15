@@ -8,7 +8,7 @@
  * 
  */
 
-require "lib/MiniPaviCli.php";
+require "MiniPaviCli.php";
 require "MiniCrypto.php";
 
 //error_reporting(E_USER_NOTICE|E_USER_WARNING);
