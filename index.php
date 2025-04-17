@@ -69,7 +69,19 @@ try {
             $vdt .= MiniPavi\MiniPaviCli::writeCentered(15, $formatter->format(new DateTime()));
             $vdt .= MiniPavi\MiniPaviCli::writeCentered(24, "SUITE pour plus d'informations.");
 
-            $context['step'] = 'affichage_prix';
+            // Vérification des touches
+            if (MiniPavi\MiniPaviCli::$fctn == 'SOMMAIRE') {
+                $context['step'] = 'accueil';
+            }
+            if (MiniPavi\MiniPaviCli::$fctn == 'RETOUR') {
+                $context['step'] = 'accueil';
+            }
+            if (MiniPavi\MiniPaviCli::$fctn == 'REPETITION') {
+                $context['step'] = 'bitcoin';
+            }
+            if (MiniPavi\MiniPaviCli::$fctn == 'SUITE') {
+                $context['step'] = 'affichage_prix';
+            }
             break;
 
         case 'affichage_prix':
@@ -86,7 +98,19 @@ try {
             $vdt .= MiniPavi\MiniPaviCli::writeCentered($counter + 5, "SOMMAIRE pour revenir à l'accueil.");
             $vdt .= MiniPavi\MiniPaviCli::writeLine0($formatter->format(new DateTime()));
 
-            $context['step'] = 'accueil';
+            // Vérification des touches
+            if (MiniPavi\MiniPaviCli::$fctn == 'SOMMAIRE') {
+                $context['step'] = 'accueil';
+            }
+            if (MiniPavi\MiniPaviCli::$fctn == 'RETOUR') {
+                $context['step'] = 'bitcoin';
+            }
+            if (MiniPavi\MiniPaviCli::$fctn == 'REPETITION') {
+                $context['step'] = 'affichage_prix';
+            }
+            if (MiniPavi\MiniPaviCli::$fctn == 'SUITE') {
+                $context['step'] = 'accueil';
+            }
             break;
     }
 
