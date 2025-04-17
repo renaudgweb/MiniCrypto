@@ -2,7 +2,7 @@
 /**
  * @file index.php
  * @author RenaudG
- * @version 0.3 Avril 2025
+ * @version 0.4 Avril 2025
  *
  * Script via API Coingecko
  * 
@@ -40,8 +40,18 @@ try {
     // Gestion de la navigation utilisateur
     switch ($context['step']) {
         case 'accueil':
-            // Affichage de la page d'accueil avec uniquement le prix du Bitcoin
+            // Affichage de la page d'accueil
             $vdt = MiniPavi\MiniPaviCli::clearScreen() . PRO_MIN . PRO_LOCALECHO_OFF;
+            $vdt .= file_get_contents('3615CryptoMoney.vdt');
+            $vdt .= MiniPavi\MiniPaviCli::writeCentered(16, "S'initier n'est pas un délit.", VDT_TXTWHITE);
+            $vdt .= MiniPavi\MiniPaviCli::writeCentered(24, "SUITE pour plus d'informations.");
+
+            $context['step'] = 'bitcoin';
+            break;
+
+        case 'bitcoin':
+            // Affichage de la page bitcoin avec uniquement le prix du Bitcoin
+            $vdt = MiniPavi\MiniPaviCli::clearScreen();
             $vdt .= file_get_contents('btc.vdt');
 
             // Recherche des informations sur le Bitcoin
@@ -54,11 +64,10 @@ try {
             }
 
             // Affichage du prix du Bitcoin
-            $vdt .= MiniPavi\MiniPaviCli::writeCentered(10, $bitcoinPrice, VDT_TXTYELLOW);
-            $vdt .= MiniPavi\MiniPaviCli::writeCentered(12, "Prix du Bitcoin mis à jour le", VDT_TXTWHITE);
-            $vdt .= MiniPavi\MiniPaviCli::writeCentered(13, $formatter->format(new DateTime()));
+            $vdt .= MiniPavi\MiniPaviCli::writeCentered(11, $bitcoinPrice, VDT_TXTYELLOW);
+            $vdt .= MiniPavi\MiniPaviCli::writeCentered(14, "Prix du Bitcoin mis à jour le", VDT_TXTWHITE);
+            $vdt .= MiniPavi\MiniPaviCli::writeCentered(15, $formatter->format(new DateTime()));
             $vdt .= MiniPavi\MiniPaviCli::writeCentered(24, "SUITE pour plus d'informations.");
-            $vdt .= MiniPavi\MiniPaviCli::writeLine0("S'initier n'est pas un délit.");
 
             $context['step'] = 'affichage_prix';
             break;
@@ -66,9 +75,8 @@ try {
         case 'affichage_prix':
             // Affichage des prix des cryptomonnaies
             $vdt = MiniPavi\MiniPaviCli::clearScreen();
-            //$vdt .= file_get_contents('3615CryptoMoney.vdt');
 
-            $counter = 3; // Initialisez le compteur à 4
+            $counter = 3; // Initialisez le compteur
             foreach ($cryptoPrices as $crypto) {
                 $vdt .= MiniPavi\MiniPaviCli::setPos(2, $counter,) . $crypto['titre'] . ": " . $crypto['desc'];
                 $vdt .= MiniPavi\MiniPaviCli::writeCentered($counter + 1, "------------------------------");
@@ -77,6 +85,7 @@ try {
 
             $vdt .= MiniPavi\MiniPaviCli::writeCentered($counter + 5, "SOMMAIRE pour revenir à l'accueil.");
             $vdt .= MiniPavi\MiniPaviCli::writeLine0($formatter->format(new DateTime()));
+
             $context['step'] = 'accueil';
             break;
     }
