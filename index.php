@@ -44,7 +44,7 @@ try {
             $vdt = MiniPavi\MiniPaviCli::clearScreen() . PRO_MIN . PRO_LOCALECHO_OFF;
             $vdt .= file_get_contents('3615CryptoMoney.vdt');
             $vdt .= MiniPavi\MiniPaviCli::writeCentered(16, "S'initier n'est pas un délit.", VDT_TXTWHITE);
-            $vdt .= MiniPavi\MiniPaviCli::writeCentered(24, "SUITE pour plus d'informations.");
+            $vdt .= MiniPavi\MiniPaviCli::writeCentered(24, "SUITE pour plus d'informations.", VDT_BLINK);
 
             $context['step'] = 'bitcoin';
             break;
