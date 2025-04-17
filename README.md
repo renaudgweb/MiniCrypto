@@ -1,12 +1,12 @@
-# MiniCrypto 🪙📈
+# 3615 CRYPTO(MONEY) 🪙📈
 
 <p align="center">
-  <img src="minibtc.png" alt="Bitcoin logo" width="600"/>
+  <img src="3615CryptoMoney.jpg" alt="Bitcoin logo" width="600"/>
 </p>
 
 ## Description
 
-MiniCrypto est un script PHP qui utilise l'API de Coingecko pour récupérer et afficher les prix des cryptomonnaies sur un Minitel via la passerelle MiniPavi. Ce projet est conçu pour fonctionner avec un environnement spécifique et nécessite des fichiers externes pour fonctionner correctement.
+3615 CRYPTO(MONEY) est un script PHP qui utilise l'API de Coingecko pour récupérer et afficher les prix des cryptomonnaies sur un Minitel via la passerelle MiniPavi. Ce projet est conçu pour fonctionner avec un environnement spécifique et nécessite des fichiers externes pour fonctionner correctement.
 
 ## Fichiers
 
@@ -20,10 +20,19 @@ Contient les fonctions utilisées par `index.php` pour récupérer les prix des 
 
 ## Fonctionnalités
 
-- **Récupération des prix des cryptomonnaies** 💸 : Utilise l'API de Coingecko pour obtenir les prix actuels du Bitcoin (BTC), Ethereum (ETH), Ripple (XRP), 
-Binancecoin (BNB), Solana (SOL), Tron (TRX), Dogecoin (DOGE), Cardano (ADA), en USD et EUR.
-- **Affichage sur Minitel** 📺 : Envoie les informations récupérées à un Minitel via la passerelle MiniPavi.
-- **Gestion de la navigation utilisateur** 🔄 : Permet à l'utilisateur de naviguer entre différentes étapes (accueil, affichage des prix).
+- **Récupération des prix des cryptomonnaies** 💸 : Utilise l'API de Coingecko pour obtenir les prix actuels des cryptomonnaies suivantes en Euros (€) et Dollars Américains ($) :
+  - Bitcoin (BTC)
+  - Ethereum (ETH)
+  - Ripple (XRP)
+  - Binance Coin (BNB)
+  - Solana (SOL)
+  - Tron (TRX)
+  - Dogecoin (DOGE)
+  - Cardano (ADA)
+
+- **Affichage sur Minitel** 📺 : Envoie les informations récupérées à un Minitel via la passerelle MiniPavi, permettant une consultation rétro et originale des données.
+
+- **Gestion de la navigation utilisateur** 🔄 : Offre une interface intuitive permettant à l'utilisateur de naviguer facilement entre différentes étapes, telles que l'accueil et l'affichage des prix des cryptomonnaies.
 
 ## Configuration
 
@@ -42,13 +51,17 @@ Binancecoin (BNB), Solana (SOL), Tron (TRX), Dogecoin (DOGE), Cardano (ADA), en 
 
 ## Version 🔄
 
-- **0.1** (Avril 2025) 📅
+- **0.3** (Avril 2025) 📅
 
 ## Ressources 📚
 
+🔗 [minipavi](http://www.minipavi.fr)
+
 🔗 [minipaviCli](https://github.com/ludosevilla/minipaviCli)
 
-🔗 [minipavi](http://www.minipavi.fr)
+🔗 [Import Miedit](https://www.minipavi.fr/miedit/minipavi-expMiedit.html)
+
+🔗 [Miedit](https://minitel.cquest.org/)
 
 ## Remarques 📝
 

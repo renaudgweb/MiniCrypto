@@ -2,7 +2,7 @@
 /**
  * @file MiniCrypto.php
  * @author RenaudG
- * @version 0.1 Avril 2025
+ * @version 0.3 Avril 2025
  *
  * Fonctions utlisées dans le script MiniCrypto
  * 
@@ -37,7 +37,7 @@ function getPrices() {
         if (isset($data[$crypto])) {
             $tRes[] = array(
                 'titre' => ucfirst($crypto), // Mettre la première lettre en majuscule
-                'desc' => $data[$crypto]['eur'] . " Euros (" . $data[$crypto]['usd'] . " \$USD)",
+                'desc' => $data[$crypto]['eur'] . " EUR (" . $data[$crypto]['usd'] . " \$US)",
             );
         }
     }

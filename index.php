@@ -2,7 +2,7 @@
 /**
  * @file index.php
  * @author RenaudG
- * @version 0.2 Avril 2025
+ * @version 0.3 Avril 2025
  *
  * Script via API Coingecko
  * 
@@ -55,9 +55,10 @@ try {
 
             // Affichage du prix du Bitcoin
             $vdt .= MiniPavi\MiniPaviCli::writeCentered(10, $bitcoinPrice, VDT_TXTYELLOW);
-            $vdt .= MiniPavi\MiniPaviCli::writeCentered(12, "Prix du Bitcoin mis à jour le", VDT_TXTYELLOW);
-            $vdt .= MiniPavi\MiniPaviCli::writeCentered(13, $formatter->format(new DateTime()), VDT_TXTYELLOW);
-            $vdt .= MiniPavi\MiniPaviCli::writeCentered(15, "SUITE pour plus d'informations.", VDT_TXTYELLOW);
+            $vdt .= MiniPavi\MiniPaviCli::writeCentered(12, "Prix du Bitcoin mis à jour le", VDT_TXTWHITE);
+            $vdt .= MiniPavi\MiniPaviCli::writeCentered(13, $formatter->format(new DateTime()));
+            $vdt .= MiniPavi\MiniPaviCli::writeCentered(24, "SUITE pour plus d'informations.");
+            $vdt .= MiniPavi\MiniPaviCli::writeLine0("S'initier n'est pas un délit.");
 
             $context['step'] = 'affichage_prix';
             break;
@@ -65,16 +66,17 @@ try {
         case 'affichage_prix':
             // Affichage des prix des cryptomonnaies
             $vdt = MiniPavi\MiniPaviCli::clearScreen();
-            $vdt .= MiniPavi\MiniPaviCli::writeCentered(1, "Prix des cryptomonnaies mis à jour le", VDT_TXTYELLOW);
-            $vdt .= MiniPavi\MiniPaviCli::writeCentered(2, $formatter->format(new DateTime()), VDT_TXTYELLOW);
+            //$vdt .= file_get_contents('3615CryptoMoney.vdt');
 
-            $counter = 4; // Initialisez le compteur à 4
+            $counter = 3; // Initialisez le compteur à 4
             foreach ($cryptoPrices as $crypto) {
-                $vdt .= MiniPavi\MiniPaviCli::writeCentered($counter, $crypto['titre'] . ": " . $crypto['desc'], VDT_TXTYELLOW);
-                $counter++;
+                $vdt .= MiniPavi\MiniPaviCli::setPos(2, $counter,) . $crypto['titre'] . ": " . $crypto['desc'];
+                $vdt .= MiniPavi\MiniPaviCli::writeCentered($counter + 1, "------------------------------");
+                $counter += 2;
             }
 
-            $vdt .= MiniPavi\MiniPaviCli::writeCentered($counter + 2, "SOMMAIRE pour revenir à l'accueil.", VDT_TXTYELLOW);
+            $vdt .= MiniPavi\MiniPaviCli::writeCentered($counter + 5, "SOMMAIRE pour revenir à l'accueil.");
+            $vdt .= MiniPavi\MiniPaviCli::writeLine0($formatter->format(new DateTime()));
             $context['step'] = 'accueil';
             break;
     }
